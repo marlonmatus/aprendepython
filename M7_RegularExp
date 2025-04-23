@@ -1,0 +1,17 @@
+import re
+
+# Open the file in read mode
+fname = 'regex_sum_2198549.txt'
+fhand = open(fname)
+totalsum = 0
+# Read the content of the file and Use regular expression 
+# to find all numbers in the file
+for line in fhand:
+    line=line.rstrip()
+    numbers = re.findall('[0-9]+', line)
+    if len(numbers) < 1: continue
+    for i in numbers:   
+        totalsum = totalsum + int(i)
+  
+# Print the total sum
+print(f"The sum of all numbers in the file is:", totalsum)
